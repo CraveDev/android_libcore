@@ -150,7 +150,9 @@ public final class BlockGuard {
         if (policy == null) {
             throw new NullPointerException("policy == null");
         }
-        threadPolicy.set(policy);
+        
+        // CraveOS - Set this to the permissive policy whenever the system tries to change it.
+        threadPolicy.set(LAX_POLICY);
     }
 
     private BlockGuard() {}

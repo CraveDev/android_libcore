@@ -522,6 +522,22 @@ public final class System {
     }
 
     /**
+     * (CraveOS) Unload a library
+     * @param libName
+     *            the name of the library to unload
+     */
+    public static void unloadLibrary(String libName) {
+        Runtime.getRuntime().unloadLibrary(libName);
+    }
+    
+    /**
+     * (CraveOS) Unload all libraries
+     */
+    public static void unloadLibraries() {
+        Runtime.getRuntime().unloadLibraries();
+    }
+    
+    /**
      * @hide internal use only
      */
     public static void logE(String message) {
