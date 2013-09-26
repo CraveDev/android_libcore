@@ -86,11 +86,6 @@ public class Runtime {
      * Reflects whether we are tracing method calls.
      */
     private boolean tracingMethods;
-
-    /**
-     * (CraveOS) Keep track of loaded libs
-     */
-    private List<String> loadedLibraries = new ArrayList<String>();
     
     /**
      * Prevent this class from being instantiated.
@@ -402,18 +397,6 @@ public class Runtime {
     private static native void nativeExit(int code);
 
     private static native String nativeLoad(String filename, ClassLoader loader);
-
-    // CraveOS
-    private static native String nativeUnload(String filename);
-    private static native void nativeUnloadSharedLibraries();
-    
-    public void unloadLibrary(String libName) {
-        nativeUnload(libName);
-    }
-    
-    public void unloadLibraries() {
-        nativeUnloadSharedLibraries();
-    }
     
     /**
      * Provides a hint to the VM that it would be useful to attempt

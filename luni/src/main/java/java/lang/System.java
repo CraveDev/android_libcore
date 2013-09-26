@@ -520,22 +520,6 @@ public final class System {
     public static void loadLibrary(String libName) {
         Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
     }
-
-    /**
-     * (CraveOS) Unload a library
-     * @param libName
-     *            the name of the library to unload
-     */
-    public static void unloadLibrary(String libName) {
-        Runtime.getRuntime().unloadLibrary(libName);
-    }
-    
-    /**
-     * (CraveOS) Unload all libraries
-     */
-    public static void unloadLibraries() {
-        Runtime.getRuntime().unloadLibraries();
-    }
     
     /**
      * @hide internal use only
